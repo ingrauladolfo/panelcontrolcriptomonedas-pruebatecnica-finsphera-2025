@@ -1,11 +1,10 @@
 // DashboardHome.tsx
 import { useDashboardHomeStore } from "@/common/stores/pages/Dashboard/Home";
-import { useLayoutEffect, type JSX } from "react";
-import { FaHome, FaUsers } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { useLanguage } from '@/common/context';
 import { Button } from "@/common/components";
-import { FaCoins } from "react-icons/fa6";
+import { icons } from "@/assets/data";
+import { useLayoutEffect } from "react";
 
 export const DashboardHome = () => {
     const { userProfile, buttons, loadUserProfile, loadButtons, getSaludo } = useDashboardHomeStore();
@@ -21,14 +20,7 @@ export const DashboardHome = () => {
 
     const saludo = getSaludo(userProfile.name.title, lang);
 
-    const icons: Record<string, JSX.Element> = {
-        Inicio: <FaHome />,
-        Usuarios: <FaUsers />,
-        Criptomonedas: <FaCoins />,
-        Home: <FaHome />,
-        Users: <FaUsers />,
-        Cryptocurrencies: <FaCoins />,
-    };
+
     const handleNavigate = (path: string) => {
         navigate(path);
     };

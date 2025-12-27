@@ -1,4 +1,4 @@
-import { DashboardCryptoCurrencies, DashboardHome, Login } from "@/pages";
+import { DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, Login } from "@/pages";
 
 export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/': () => Promise.resolve({ default: Login }),
@@ -7,5 +7,7 @@ export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/dashboard/home': () => Promise.resolve({ default: DashboardHome }),
     '/dashboard/inicio': () => Promise.resolve({ default: DashboardHome }),
     '/dashboard/cryptocurrencies': () => Promise.resolve({ default: DashboardCryptoCurrencies }),
-    '/dashboard/criptomonedas': () => Promise.resolve({ default: DashboardCryptoCurrencies })
+    '/dashboard/criptomonedas': () => Promise.resolve({ default: DashboardCryptoCurrencies }),
+    '/dashboard/criptomoneda': () => Promise.resolve({ default: DashboardCryptoCurrencyDetails }),
+    '/dashboard/cryptocurrency': () => Promise.resolve({ default: DashboardCryptoCurrencyDetails })
 };

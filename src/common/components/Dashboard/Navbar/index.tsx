@@ -6,6 +6,7 @@ import { useUIStore, useUserStore } from '@/common/stores'
 import { MdMenu } from 'react-icons/md'
 import { useLanguage } from '@/common/context'
 import { MX, US } from 'country-flag-icons/react/3x2'
+import { Button } from '../../shared/Button'
 
 export const Navbar: FC = () => {
     const { sidebarOpen, setSidebarOpen, loadTitles } = useUIStore()
@@ -34,7 +35,45 @@ export const Navbar: FC = () => {
     }, [loadFromStorage, loadTitles, lang])
 
     return (
-        <header className="h-14 flex items-center justify-between px-4 py-2 bg-inherit border-b border-gray-200 text-white">
+        <header className="h-14 flex items-center justify-between p-[clamp(0.5rem, 1.6vw, 0.9rem)] bg-inherit border-b border-[#e6e6e6] text-white">
+            <div className="flex items-center gap-3">
+                <button
+                    className="text-[20px] bg-none border-none"
+                    onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                    <MdMenu className="size-6" />
+                </button>
+            </div>
+            <div className="flex items-center mt-4.5 ml-2.5">
+                <div className="flex items-center gap-2">
+                    <div className="relative mb-2.5 mt-2.5">
+                        <Button ariaLabel="Toggle language" className="py-1.5 px-2.5 border border-[#dddd] bg-inherit cursor-pointer text-white mb-3.75" type="button" onClick={toggleLang}>
+                            {lang === 'es' ? <MX className="size-6" /> : <US className="size-6" />}
+                        </Button>
+                    </div>
+                    <UserProfile
+                        user={user}
+                        initials={initials}
+                        loadFromStorage={loadFromStorage}
+                        showLogoutModal={showLogoutModal}
+                        openLogoutModal={openLogoutModal}
+                        closeLogoutModal={closeLogoutModal}
+                        confirmLogout={confirmLogout}
+                        confirmText="Aceptar"
+                        cancelText="Cancelar"
+                    />
+
+
+                </div>
+
+            </div>
+            <Sidebar />
+        </header>
+    )
+}
+
+/* 
+ <header className="h-14 flex items-center justify-between px-4 py-2 bg-inherit border-b border-gray-200 text-white">
             <div className="flex items-center gap-3">
                 <button
                     className="text-xl bg-none border-none cursor-pointer text-white"
@@ -64,5 +103,4 @@ export const Navbar: FC = () => {
 
             <Sidebar />
         </header>
-    )
-}
+*/

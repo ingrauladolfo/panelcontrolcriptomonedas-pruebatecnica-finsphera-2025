@@ -2,9 +2,9 @@ import { useLoginStore } from '@/common/stores'
 import { useLayoutEffect, useRef, type FormEvent } from 'react'
 import { useNavigate } from 'react-router'
 import { MX, US } from "country-flag-icons/react/3x2";
-import { textLogin } from '@/assets/data/pages/Login';
 import { Modal } from '@/common/components';
 import { useLanguage } from '@/common/context';
+import { textLogin } from '@/assets/data';
 
 export const Login = () => {
     const { username, password, setUsername, setPassword, fetchUsers, showModal, modalMessage, handleCloseModal, handleLogin } = useLoginStore()
@@ -31,9 +31,6 @@ export const Login = () => {
                 <button onClick={toggleLang}>
                     {lang === "es" ? <MX className="size-4" /> : <US className="size-4" />}
                 </button>
-                {/*  <button onClick={toggleTheme}>
-                        {theme === "dark" ? <FaMoon /> : <FaSun />}
-                    </button> */}
             </div>
             <div className="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg">
                 <h2 className="text-2xl font-bold text-white text-center mb-4">{t.title}</h2>
@@ -50,7 +47,7 @@ export const Login = () => {
                             name="username"
                             type="text"
                             className="p-3 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            /*  value={username} */
+                            value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             placeholder={t.userPlaceHolder}
                             autoComplete="username"

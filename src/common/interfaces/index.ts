@@ -5,5 +5,10 @@ import type { ButtonProps } from "./components/shared/Button";
 import type { DashboardHomeState } from "./pages/Dashboard/Home";
 import type { CardProps, } from "./components/Dashboard/Card";
 import type { RandomUser, UserState } from './components/Dashboard/Navbar'
-
-export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState }
+import type { UserProfileProps } from "./components/Dashboard/UserProfile";
+import type { ModalProps, SendMessageModalProps, Message } from "@/common/interfaces/components/shared/Modal";
+import type { CryptoState } from "./stores/pages/Dashboard/CryptoCurrencies";
+import type { SearchProps } from "./components/Dashboard/Search";
+import type { SearchState, SearchActions } from "./stores/components/Dashboard/Search";
+import type { NullResultsFoundProps } from "./components/Dashboard/NullResults";
+export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps }

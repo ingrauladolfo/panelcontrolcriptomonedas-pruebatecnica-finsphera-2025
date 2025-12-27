@@ -5,7 +5,8 @@ export interface CardProps {
     onDelete?: () => void;
     onView?: () => void;
     className?: string;
-    type: string;
+    type?: string;
+    title?: string;
 }
 /* export interface CardDetailsProps { title?: string; user?: any; children: ReactNode; className?: string; }
 

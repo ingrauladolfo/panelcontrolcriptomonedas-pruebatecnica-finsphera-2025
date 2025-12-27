@@ -6,4 +6,6 @@ export interface ButtonProps {
     type?: 'submit' | 'reset' | 'button';
     href?: string;
     className?: string;
+    ariaLabel?: string
+    disabled?: any
 }

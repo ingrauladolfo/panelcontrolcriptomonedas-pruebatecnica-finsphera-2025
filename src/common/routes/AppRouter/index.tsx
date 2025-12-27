@@ -15,7 +15,8 @@ export const AppRouter: FC = () => {
     const { isAuthenticated } = useLoginStore();
 
     const currentPath = location.pathname;
-    const normalizedPath = currentPath === '/' ? '/login' : currentPath.split('?')[0];
+    // no mapear "/" a "/login" aquí; dejar el path real
+    const normalizedPath = currentPath.split('?')[0];
 
     const matchedRoute = useMemo(
         () =>
@@ -32,7 +33,10 @@ export const AppRouter: FC = () => {
         () => isPublic(normalizedPath),
         [normalizedPath]
     );
-    useLayoutEffect(() => { document.title = matchedRoute ? matchedRoute.title[lang] : lang === 'en' ? 'Error | Page not found' : 'Error | Página no encontrada'; }, [matchedRoute, lang]);
+
+    useLayoutEffect(() => {
+        document.title = matchedRoute ? matchedRoute.title[lang] : lang === 'en' ? 'Error | Page not found' : 'Error | Página no encontrada';
+    }, [matchedRoute, lang]);
 
     useLayoutEffect(() => {
         if (!matchedRoute) return;
@@ -43,17 +47,14 @@ export const AppRouter: FC = () => {
     }, [matchedRoute, lang, normalizedPath, navigate]);
 
     const LoaderComponent = useMemo(() => {
-        /* if (!matchedRoute) return () => <NotFound />; */
         if (!matchedRoute) return () => 'Página no encontrada';
 
         const loader = pagesMap[matchedRoute.path.en] || pagesMap[matchedRoute.path.es];
-        /* if (!loader) return () => <UnderConstruction />; */
         if (!loader) return () => 'Página en construcción';
 
         return lazy(loader);
     }, [matchedRoute]);
 
-    // Asegurar que rutas públicas traducidas estén registradas
     const publicPaths = useMemo(() => {
         const fromMap = Object.keys(pagesMap).filter(p => isPublic(p));
         const fromTitles = pathToTitle.flatMap(({ path }) =>
@@ -70,7 +71,6 @@ export const AppRouter: FC = () => {
             }
         });
 
-        // Asegurar rutas traducidas
         pathToTitle.forEach(({ path }) => {
             const { en, es } = path;
             if (isPublic(en) && pagesMap[en]) {
@@ -83,10 +83,28 @@ export const AppRouter: FC = () => {
 
         return m;
     }, []);
+
+    // decidir destino inicial para "/"
+    const hasSession = isAuthenticated || (() => {
+        try {
+            const raw = localStorage.getItem('userProfile');
+            if (!raw) return false;
+            const p = JSON.parse(raw);
+            return !!(p?.authenticated === true || p?.login?.username || p?.name);
+        } catch {
+            return false;
+        }
+    })();
+
+    const dashboardRoot = lang === 'en' ? '/dashboard/home' : '/dashboard/inicio';
+    const publicLogin = lang === 'en' ? '/login' : '/inicio-sesion';
+    const initialRedirect = hasSession ? dashboardRoot : publicLogin;
+
     return (
         <Routes>
-            <Route path="/" element={<Navigate to="/login" replace />} />
-            <Route path="/dashboard" element={<Navigate to="/dashboard/home" replace />} />
+            {/* usar initialRedirect en "/" */}
+            <Route path="/" element={<Navigate to={initialRedirect} replace />} />
+            <Route path="/dashboard" element={<Navigate to={dashboardRoot} replace />} />
 
             {/* Rutas públicas traducidas */}
             {publicPaths.map(p => {
@@ -118,10 +136,10 @@ export const AppRouter: FC = () => {
                 <Route
                     path="/dashboard/*"
                     element={
-                        isAuthenticated ? (
+                        hasSession ? (
                             <DashboardLayout />
                         ) : (
-                            <Navigate to="/login" replace />
+                            <Navigate to={publicLogin} replace />
                         )
                     }
                 >

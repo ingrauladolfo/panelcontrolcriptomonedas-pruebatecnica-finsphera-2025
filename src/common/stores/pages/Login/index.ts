@@ -15,13 +15,11 @@ export const useLoginStore = create<StoreLogin>((set, get) => ({
     setUsername: (username) => set({ username }),
     setPassword: (password) => set({ password }),
 
-    // useLoginStore.ts
     fetchUsers: async () => {
         if (get().hasFetched) return
         set({ hasFetched: true })
 
         try {
-            // traer usuarios completos (sin guardar nacionalidades aún)
             const usersRes = await axios.get('https://randomuser.me/api/?results=10')
             set({ users: usersRes.data.results })
         } catch {
@@ -49,19 +47,15 @@ export const useLoginStore = create<StoreLogin>((set, get) => ({
         }
         const authenticatedUser = { ...user, authenticated: true };
 
-        // guardar perfil y usuarios
         localStorage.setItem('userProfile', JSON.stringify(authenticatedUser))
         localStorage.setItem('users', JSON.stringify(users))
 
-        // calcular nacionalidades únicas a partir de los usuarios y guardarlas al iniciar sesión
         try {
             const nationalities = [
                 ...new Set(users.map((u: any) => u.nat).filter(Boolean))
             ]
             localStorage.setItem('userNationalities', JSON.stringify(nationalities))
-        } catch {
-            // no bloquear el login si falla al guardar nacionalidades
-        }
+        } catch { }
 
         set({
             isAuthenticated: true,
@@ -85,11 +79,26 @@ export const useLoginStore = create<StoreLogin>((set, get) => ({
     handleCloseModal: () => set({ showModal: false }),
 
     checkAuth: () => {
-        const userProfile = localStorage.getItem('userProfile');
-        if (userProfile) {
-            set({ isAuthenticated: true });
+        const raw = localStorage.getItem('userProfile');
+        if (!raw) {
+            set({ isAuthenticated: false });
+            return;
+        }
+        try {
+            const parsed = JSON.parse(raw);
+            // aceptar si explicitamente tiene authenticated true, o si parece un perfil válido
+            const authed = !!(
+                parsed.authenticated === true ||
+                parsed.authenticated === 'true' ||
+                parsed.login?.username ||
+                parsed.name
+            );
+            set({ isAuthenticated: authed });
+        } catch {
+            set({ isAuthenticated: false });
         }
     },
 }))
 
+// Ejecutar comprobación al importar el módulo
 useLoginStore.getState().checkAuth();

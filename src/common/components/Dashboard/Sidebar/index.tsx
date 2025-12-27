@@ -1,23 +1,16 @@
 // Sidebar.tsx
 import '@/common/styles/components/Navbar/index.css';
-import type { FC, JSX } from 'react';
 import { FaX } from 'react-icons/fa6';
-import { useLayoutEffect } from 'react';
+import { useLayoutEffect, type FC } from 'react';
 import { useUIStore } from '@/common/stores';
 import { useLanguage } from '@/common/context';
-import { FaCoins, FaHome, FaUsers } from 'react-icons/fa';
+import { Button } from '../../shared/Button';
+import { icons } from '@/assets/data';
 
 export const Sidebar: FC = () => {
     const { sidebarOpen, setSidebarOpen, titles, loadTitles } = useUIStore();
     const { lang } = useLanguage()
-    const icons: Record<string, JSX.Element> = {
-        Inicio: <FaHome />,
-        Usuarios: <FaUsers />,
-        Criptomonedas: <FaCoins />,
-        Home: <FaHome />,
-        Users: <FaUsers />,
-        Cryptocurrencies: <FaCoins />,
-    };
+
     useLayoutEffect(() => {
         loadTitles(lang);
     }, [loadTitles, lang]);
@@ -25,9 +18,9 @@ export const Sidebar: FC = () => {
     return (
         <aside className={`fixed top-0 left-0 w-[80%] max-w-70 h-screen bg-[#1A1D23] transform transition-transform duration-300 ease-in-out ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} shadow-lg z-50`}>
             <div className="p-4">
-                <button className="bg-none border-none text-[24px] cursor-pointer text-white" onClick={() => setSidebarOpen(false)}>
-                    <FaX />
-                </button>
+                <Button className="bg-none border-none text-[24px] cursor-pointer text-white" onClick={() => setSidebarOpen(false)}>
+                    <FaX className="size-6" />
+                </Button>
                 <nav>
                     <ul>
                         {titles.map((item: any, index: any) => (

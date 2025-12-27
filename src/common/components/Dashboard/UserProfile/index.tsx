@@ -1,21 +1,10 @@
-import { useLayoutEffect, useRef, useState, type FC } from 'react'
-import '@/common/styles/components/Navbar/index.css'
-import { Modal } from '../../shared/Modal'
-import { FaUser, FaEnvelope } from 'react-icons/fa'
-import type { UserProfileProps } from '@/common/interfaces'
-import { Button } from '@/common/components/shared/Button' // ajusta ruta si aplica
+import type { UserProfileProps } from "@/common/interfaces"
+import { useLayoutEffect, useRef, useState, type FC } from "react"
+import { Button } from "../../shared/Button"
+import { FaEnvelope, FaUser } from "react-icons/fa6"
+import { Modal } from "../../shared/Modal"
 
-export const UserProfile: FC<UserProfileProps> = ({
-    user,
-    initials,
-    loadFromStorage,
-    showLogoutModal,
-    openLogoutModal,
-    closeLogoutModal,
-    confirmLogout,
-    confirmText,
-    cancelText,
-}) => {
+export const UserProfile: FC<UserProfileProps> = ({ user, initials, loadFromStorage, showLogoutModal, openLogoutModal, closeLogoutModal, confirmLogout, confirmText, cancelText }) => {
     const [open, setOpen] = useState(false)
     const ref = useRef<HTMLDivElement | null>(null)
 
@@ -32,34 +21,31 @@ export const UserProfile: FC<UserProfileProps> = ({
     useLayoutEffect(() => {
         if (open) loadFromStorage()
     }, [open, loadFromStorage])
-
     return (
-        <div className="user-profile" ref={ref}>
-            {/* Avatar toggle usando Button compartido */}
-            <Button className="avatar-btn" type="button" onClick={() => setOpen(v => !v)} bgColor="#333333" color='#F7F7F7'>
+        <div className="relative mb-2.5 mt-2.5">
+            <Button className="py-1.5 px-2.5 border border-[#dddd] bg-inherit cursor-pointer text-white mb-3.75" type="button" onClick={() => setOpen(v => !v)}>
                 {user?.picture?.thumbnail ? (
-                    <img src={user.picture.thumbnail} alt="Avatar" className="avatar-image" />
+                    <img src={user.picture.thumbnail} alt="Avatar" className="size-8 rounded-[50%] mr-2" />
                 ) : null}
-                <span className="avatar-initials">{initials ?? 'Perfil'}</span>
+                <span className="text-[14px] font-bold">{initials ?? 'Perfil'}</span>
             </Button>
-
             {open && (
-                <div className="profile-dropdown">
-                    {!user && <div className="pd-empty">Usuario no encontrado</div>}
+                <div className="absolute right-0 md:mt-2 min-w-55 bg-inherit border border-[#e6e6e6] rounded-lg shadow-[0 6px 20px rgba(0, 0, 0, 0.08)] p-3 z-100">
+                    {!user && <div className="py-2 px-0">Usuario no encontrado</div>}
 
                     {user && (
-                        <div className="pd-content">
-                            <div className="pd-name">
-                                <FaUser className="pd-icon" />
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center">
+                                <FaUser className="mr-2.5 text-[18px]" />
                                 {user.name.title} {user.name.first} {user.name.last}
                             </div>
-                            <div className="pd-email">
-                                <FaEnvelope className="pd-icon" />
+                            <div className="flex items-center">
+                                <FaEnvelope className="mr-2.5 text-[18px]" />
                                 {user.email}
                             </div>
 
                             {/* Logout usando Button compartido */}
-                            <Button className="logout-btn" type="button" onClick={openLogoutModal} bgColor="#333333" color='#F7F7F7'>
+                            <Button className="logout-btn" type="button" onClick={openLogoutModal}>
                                 Cerrar sesión
                             </Button>
                         </div>
