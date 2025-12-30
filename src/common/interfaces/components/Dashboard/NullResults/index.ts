@@ -1,5 +1,5 @@
 // NoResultsFound.interface.ts
 export interface NullResultsFoundProps {
-    text: string;
-    module: string
+    text?: string | number;
+    module?: string
 }

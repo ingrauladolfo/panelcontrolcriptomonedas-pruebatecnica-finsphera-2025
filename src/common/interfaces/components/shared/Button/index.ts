@@ -7,5 +7,6 @@ export interface ButtonProps {
     href?: string;
     className?: string;
     ariaLabel?: string
-    disabled?: any
+    disabled?: any;
+    rounded?: string
 }

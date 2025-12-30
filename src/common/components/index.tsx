@@ -5,5 +5,6 @@ import { Navbar } from "./Dashboard/Navbar";
 import { Card } from "./Dashboard/Card";
 import { Pagination } from "./Dashboard/Pagination";
 import { Search } from "./Dashboard/Search";
-
-export { Loading, Modal, Button, Navbar, Card, Pagination, Search }
+import { NullResults } from "./Dashboard/NullResults";
+import { SendMessageModal } from "./shared/Modal/SendMessageModal";
+export { Loading, Modal, Button, Navbar, Card, Pagination, Search, NullResults, SendMessageModal }

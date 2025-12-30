@@ -1,6 +1,5 @@
 import type { CardProps } from '@/common/interfaces/components/Dashboard/Card';
-/* import '@/common/styles/components/Card/CardDetails/index.css';
- */
+
 
 export const CardDetails = ({ children, data, className = '', title }: CardProps) => {
     return (
