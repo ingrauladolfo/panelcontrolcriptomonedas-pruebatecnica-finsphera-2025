@@ -93,14 +93,14 @@ export const DashboardCryptoCharts: FC = () => {
     }, [symbol, selectedInterval, fetchCripto, fetchCryptoValue]);
 
     // derived values
-    const latestClose = useMemo(() => {
-        const series = (chartSeries && (chartSeries as any)[0] && (chartSeries as any)[0].data) || [];
-        if (!series.length) return undefined;
-        const last = series[series.length - 1];
-        return last?.y?.[3] ?? undefined;
-    }, [chartSeries]);
+    /*  const latestClose = useMemo(() => {
+         const series = (chartSeries && (chartSeries as any)[0] && (chartSeries as any)[0].data) || [];
+         if (!series.length) return undefined;
+         const last = series[series.length - 1];
+         return last?.y?.[3] ?? undefined;
+     }, [chartSeries]);
+     const price = (cripto && (cripto as any).price) ?? latestClose; */
 
-    const price = (cripto && (cripto as any).price) ?? latestClose;
     /*     const percent = (cripto && (cripto as any).priceChangePercent) ?? undefined;
      */
     // ApexChart options (cast chart.type to any to satisfy TS)

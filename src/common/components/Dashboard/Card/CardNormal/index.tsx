@@ -4,7 +4,7 @@ import { FaEye, FaTrash, FaChartLine, FaEnvelope, FaFileCsv } from 'react-icons/
 import { useUsersStore } from '@/common/stores';
 import { useState } from 'react';
 
-export const CardNormal = ({ title, data, children, onDelete, onView, onViewGraph, onExport, onMessage, onClose, onConfirm, showModal, onSendMessage, className, dataType }: CardProps) => {
+export const CardNormal = ({ title, data, children, onDelete, onView, onViewGraph, onExport, onMessage, onClose, onConfirm, showModal, className, dataType }: CardProps) => {
     // prefer passed user prop shape; fallback to "data"
     const user = data ?? (data as any)
 

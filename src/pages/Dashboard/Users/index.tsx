@@ -1,15 +1,15 @@
 // DashboardUsers.tsx
-import { useLayoutEffect, useState, type FC } from 'react';
-import { Card, Button, Pagination, NullResults, Search } from "@/common/components";
+import { useLayoutEffect, type FC } from 'react';
+import { Card, Button, Pagination, NullResults } from "@/common/components";
 import { useUsersStore } from '@/common/stores/pages/Dashboard/Users';
-import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
+import { FaChevronLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router';
 import { FaUsers } from 'react-icons/fa6';
 import { itemsPerPageOptions, textUsers } from '@/assets/data';
 import { useLanguage } from '@/common/context';
 
 export const DashboardUsers: FC = () => {
-    const { users, getUsers, getNationalities, currentPage, itemsPerPage, handlePageChange, handleItemsPerPageChange, renderPageNumbers, nationalities, gender, nationality, age, handleGenderChange, handleNationalityChange, handleAgeChange, resetFilters, handleExportCSV, handleDeleteUser, handleViewUser, handleExportUserCSV, handleSendMessage } = useUsersStore();
+    const { users, getUsers, getNationalities, currentPage, itemsPerPage, handlePageChange, handleItemsPerPageChange, renderPageNumbers, nationalities, gender, nationality, age, handleGenderChange, handleNationalityChange, handleAgeChange, resetFilters, handleExportCSV, handleDeleteUser, handleViewUser, handleExportUserCSV } = useUsersStore();
     const navigate = useNavigate();
     const { lang } = useLanguage();
 
