@@ -15,6 +15,12 @@ export const useUIStore = create<UIState>((set, get) => ({
     setSidebarOpen: (value) => set({ sidebarOpen: value }),
     titles: [],
     loadTitles: (lang: string) => {
+        const currentTitles = get().titles;
+        if (currentTitles.length > 0) {
+            // Si ya hay títulos cargados, no hacer nada
+            return;
+        }
+
         // Solo aceptar rutas exactas cuya UI quieres mostrar
         const allowed = ['/dashboard/home', '/dashboard/users', '/dashboard/inicio', '/dashboard/usuarios', '/dashboard/criptomonedas', '/dashboard/cryptocurrencies'];
 

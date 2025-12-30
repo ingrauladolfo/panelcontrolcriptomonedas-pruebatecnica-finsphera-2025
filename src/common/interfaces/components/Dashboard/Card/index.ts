@@ -8,7 +8,6 @@ export interface CardProps {
     onViewGraph?: () => void;
     onExport?: () => void;
     onClose?: () => void;
-    onSendMessage?: (message: { title: string; content: string }) => void;
     onConfirm?: () => void;
     onMessage?: true;
     className?: string;
