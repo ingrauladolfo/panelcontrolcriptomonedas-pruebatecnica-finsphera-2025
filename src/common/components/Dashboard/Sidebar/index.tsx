@@ -1,5 +1,4 @@
 // Sidebar.tsx
-import '@/common/styles/components/Navbar/index.css';
 import { FaX } from 'react-icons/fa6';
 import { useLayoutEffect, type FC } from 'react';
 import { useUIStore } from '@/common/stores';

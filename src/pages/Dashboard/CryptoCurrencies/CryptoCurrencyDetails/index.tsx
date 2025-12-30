@@ -7,11 +7,11 @@ import { useLocation, useNavigate } from "react-router";
 
 export const DashboardCryptoCurrencyDetails = () => {
     const navigate = useNavigate();
-    const location = useLocation();
+    const { search } = useLocation();
 
     const { fetchCripto, cripto } = useCryptoStore()
     const resolveSymbol = (): string | null => {
-        const sp = new URLSearchParams(location.search);
+        const sp = new URLSearchParams(search);
         return sp.get('symbol');
     };
     const symbol = resolveSymbol();
@@ -49,7 +49,7 @@ export const DashboardCryptoCurrencyDetails = () => {
                 )}
             </div>
             <div className="basis-full order-99 flex justify-center mt-5 box-border [@max-width:980px]:order-99 [@max-width:980px]:basis-full ">
-                <Button type="button" className="py-2.5 px-5 border-none rounded-[5px] cursor-pointer w-fit bg-[#3e8e41]" onClick={() => navigate(-1)}                >
+                <Button type="button" className="py-2.5 px-5 border-none rounded-[5px] cursor-pointer w-fit! bg-[#3e8e41]" onClick={() => navigate(-1)}                >
                     Regresar
                 </Button>
             </div>

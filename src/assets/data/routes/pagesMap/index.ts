@@ -1,5 +1,4 @@
-import { DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, Login } from "@/pages";
-
+import { DashboardUserDetails, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, DashboardUsers, DashboardCryptoCharts, Login } from "@/pages";
 export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/': () => Promise.resolve({ default: Login }),
     '/login': () => Promise.resolve({ default: Login }),
@@ -9,5 +8,11 @@ export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/dashboard/cryptocurrencies': () => Promise.resolve({ default: DashboardCryptoCurrencies }),
     '/dashboard/criptomonedas': () => Promise.resolve({ default: DashboardCryptoCurrencies }),
     '/dashboard/criptomoneda': () => Promise.resolve({ default: DashboardCryptoCurrencyDetails }),
-    '/dashboard/cryptocurrency': () => Promise.resolve({ default: DashboardCryptoCurrencyDetails })
+    '/dashboard/cryptocurrency': () => Promise.resolve({ default: DashboardCryptoCurrencyDetails }),
+    '/dashboard/users': () => Promise.resolve({ default: DashboardUsers }),
+    '/dashboard/usuarios': () => Promise.resolve({ default: DashboardUsers }),
+    '/dashboard/usuario': () => Promise.resolve({ default: DashboardUserDetails }),
+    '/dashboard/user': () => Promise.resolve({ default: DashboardUserDetails }),
+    '/dashboard/grafica': () => Promise.resolve({ default: DashboardCryptoCharts }),
+    '/dashboard/chart': () => Promise.resolve({ default: DashboardCryptoCharts })
 };

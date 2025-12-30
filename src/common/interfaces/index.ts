@@ -11,4 +11,9 @@ import type { CryptoState } from "./stores/pages/Dashboard/CryptoCurrencies";
 import type { SearchProps } from "./components/Dashboard/Search";
 import type { SearchState, SearchActions } from "./stores/components/Dashboard/Search";
 import type { NullResultsFoundProps } from "./components/Dashboard/NullResults";
-export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps }
+import type { PaginationProps } from "./components/Dashboard/Pagination";
+import type { UsersStore } from '@/common/interfaces/stores/pages/Dashboard/Users'
+import type { User } from '@/common/interfaces/stores/pages/Dashboard/Users/User'
+import type { MessagesMap, SendMessageState } from "@/common/interfaces/stores/components/Dashboard/Modal";
+import type { UserMessage, UserDetailsStore } from "./pages/Dashboard/Users/UserDetails";
+export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps, PaginationProps, UsersStore, User, MessagesMap, SendMessageState, UserMessage, UserDetailsStore }

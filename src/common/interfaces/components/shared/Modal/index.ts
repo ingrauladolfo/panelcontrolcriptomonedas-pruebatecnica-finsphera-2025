@@ -1,7 +1,7 @@
 // interfaces.ts
 export interface ModalProps {
     message: string;
-    onClose: () => void;
+    onClose?: () => void;
     onConfirm?: () => void;
     confirmText?: string;
     cancelText?: string;
@@ -17,12 +17,12 @@ export interface SendMessageModalProps {
         };
     };
     onClose: () => void;
-    onSendMessage: (message: { title: string; content: string }) => void;
+    onSendMessage?: (message: { title: string; content: string }) => void;
 
 }
 
 export interface Message {
     title: string;
     content: string;
-    date: Date;
+    date: any;
 }

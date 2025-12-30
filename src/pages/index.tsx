@@ -3,4 +3,7 @@ import { DashboardLayout } from './Dashboard'
 import { DashboardHome } from './Dashboard/Home'
 import { DashboardCryptoCurrencies } from './Dashboard/CryptoCurrencies'
 import { DashboardCryptoCurrencyDetails } from './Dashboard/CryptoCurrencies/CryptoCurrencyDetails'
-export { Login, DashboardLayout, DashboardHome, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails }
+import { DashboardUsers } from './Dashboard/Users'
+import { DashboardCryptoCharts } from './Dashboard/CryptoCurrencies/CryptoCharts'
+import { DashboardUserDetails } from './Dashboard/Users/UserDetails'
+export { Login, DashboardLayout, DashboardHome, DashboardUsers, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardCryptoCharts, DashboardUserDetails }

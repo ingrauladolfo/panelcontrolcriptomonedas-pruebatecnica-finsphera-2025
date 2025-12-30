@@ -21,9 +21,17 @@ export const pathToTitle: PathToTitle[] = [
         path: { es: '/dashboard/criptomonedas', en: '/dashboard/cryptocurrencies' },
         title: { es: 'Dashboard - Criptomonedas | Finsphera', en: 'Dashboard - Cryptocurrencies | Finsphera' }
     },
-
+    {
+        path: { es: '/dashboard/usuario', en: '/dashboard/user' },
+        title: { es: 'Dashboard - Usuario | Finsphera', en: 'Dashboard - User | Finsphera' }
+    },
     {
         path: { es: '/dashboard/criptomoneda', en: '/dashboard/cryptocurrency' },
         title: { es: 'Dashboard - Criptomoneda | Finsphera', en: 'Dashboard - Cryptocurrency | Finsphera' }
     },
+    {
+        path: { es: '/dashboard/grafica', en: '/dashboard/chart' },
+        title: { es: 'Dashboard - Gráfica | Finsphera', en: 'Dashboard - Chart | Finsphera' }
+    },
+
 ];

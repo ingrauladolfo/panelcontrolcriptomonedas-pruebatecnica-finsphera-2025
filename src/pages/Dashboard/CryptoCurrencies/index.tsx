@@ -1,30 +1,16 @@
 // DashboardCryptoCurrencies.tsx
 import { itemsPerPageOptions, textCurrencies } from "@/assets/data";
-import { Card, Pagination, Search } from "@/common/components/";
-import { NullResults } from "@/common/components/Dashboard/NullResults";
+import { Card, Loading, Pagination, Search, NullResults } from "@/common/components/";
 import { useLanguage } from "@/common/context";
 import { useCryptoStore } from "@/common/stores";
-import { useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState, type FC } from "react";
 import { FaCoins } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
 
 
-export const DashboardCryptoCurrencies = () => {
-    const {
-        criptos,
-        fetchCriptos,
-        symbol,
-        loading,
-        error,
-        handleViewCoin,
-        handlePageChange,
-        renderPageNumbers,
-        itemsPerPage,
-        currentPage,
-        handleItemsPerPageChange,
-        // handleSearch // not used here, using local handler
-    } = useCryptoStore();
+export const DashboardCryptoCurrencies: FC = () => {
+    const { criptos, fetchCriptos, symbol, loading, error, handleViewCoin, handleViewChart, handlePageChange, renderPageNumbers, itemsPerPage, currentPage, handleItemsPerPageChange } = useCryptoStore();
 
 
     const navigate = useNavigate();
@@ -59,13 +45,16 @@ export const DashboardCryptoCurrencies = () => {
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
 
-    if (loading) return <div className="text-center py-8">Cargando...</div>;
+    if (loading) return <Loading className="text-center py-8" />;
     if (error) return <div className="text-center py-8">Error: {error}</div>;
 
-    const handleView = (symbol: string) => {
+    const handleViewCopper = (symbol: string) => {
         handleViewCoin(navigate, symbol, lang);
     };
-
+    const handleViewGraph = (symbol: string) => {
+        handleViewChart(navigate, symbol, lang)
+        // Implementa la lógica para ver la gráfica
+    };
     return (
         <div className="flex flex-col items-center p-5">
             <div className="flex items-center mb-5">
@@ -96,21 +85,16 @@ export const DashboardCryptoCurrencies = () => {
                             key={cripto.symbol ?? index}
                             type="normal"
                             data={cripto}
-                            onView={() => handleView(cripto.symbol)}
+                            onView={() => handleViewCopper(cripto.symbol)}
+                            onViewGraph={() => handleViewGraph(cripto.symbol)}
+                            dataType="crypto"
+
                         />
                     ))}
                 </div>
             )}
 
-            <Pagination
-                pages={renderPageNumbers(pages, currentPage)}
-                currentPage={currentPage}
-                handlePageChange={handlePageChange}
-                itemsPerPage={itemsPerPage}
-                handleItemsPerPageChange={handleItemsPerPageChange}
-                itemsPerPageOptions={itemsPerPageOptions}
-                t={t}
-            />
+            <Pagination pages={renderPageNumbers(pages, currentPage)} currentPage={currentPage} handlePageChange={handlePageChange} itemsPerPage={itemsPerPage} handleItemsPerPageChange={handleItemsPerPageChange} itemsPerPageOptions={itemsPerPageOptions} t={t} />
         </div>
     );
 };

@@ -1,6 +1,5 @@
 // Modal.tsx
 import type { ModalProps } from '@/common/interfaces';
-import '@/common/styles/components/shared/Modal/index.css';
 import type { FC } from 'react';
 import { Button } from '@/common/components';
 export const Modal: FC<ModalProps> = ({ message, onClose, onConfirm, confirmText, cancelText }) => {
@@ -13,7 +12,7 @@ export const Modal: FC<ModalProps> = ({ message, onClose, onConfirm, confirmText
                     {cancelText && (
                         <Button
                             className="w-auto min-w-30 py-[0.6rem] px-[1.2rem] rounded-lg transform-none cursor-pointer hover:-translate-y-px only:my-0 only:mx-auto first:mr-auto last:ml-auto  opacity-[0.9] bg-[#6C7A89] text-[#FFFFFF]"
-                            onClick={onClose}
+                            onClick={() => onClose && onClose()}
                         >
                             {cancelText}
                         </Button>
