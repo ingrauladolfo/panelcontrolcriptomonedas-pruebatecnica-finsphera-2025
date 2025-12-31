@@ -32,7 +32,7 @@ export const useCryptoStore = create<CryptoState>((set, get) => ({
     fetchCripto: async (symbol: string) => {
         set({ loading: true })
         try {
-            const response = await axios.get(`https://api.binance.com/api/v3/ticker/price?symbol=${symbol}`)
+            const response = await axios.get(`https://api.binance.com/api/v3/ticker?symbol=${symbol}`)
             const criptoData = response.data
             // keep the ticker summary in cripto
             set({ cripto: criptoData, loading: false })

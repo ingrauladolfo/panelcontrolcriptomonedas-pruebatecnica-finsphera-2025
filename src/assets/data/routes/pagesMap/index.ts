@@ -1,4 +1,4 @@
-import { DashboardUserDetails, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, DashboardUsers, DashboardCryptoCharts, Login } from "@/pages";
+import { DashboardUserDetails, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, DashboardUsers, DashboardCryptoCharts, Login, DashboardCryptoHeatmap } from "@/pages";
 export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/': () => Promise.resolve({ default: Login }),
     '/login': () => Promise.resolve({ default: Login }),
@@ -14,5 +14,9 @@ export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/dashboard/usuario': () => Promise.resolve({ default: DashboardUserDetails }),
     '/dashboard/user': () => Promise.resolve({ default: DashboardUserDetails }),
     '/dashboard/grafica': () => Promise.resolve({ default: DashboardCryptoCharts }),
-    '/dashboard/chart': () => Promise.resolve({ default: DashboardCryptoCharts })
+    '/dashboard/chart': () => Promise.resolve({ default: DashboardCryptoCharts }),
+    '/dashboard/mapa-calor': () => Promise.resolve({ default: DashboardCryptoHeatmap }),
+    '/dashboard/heatmap': () => Promise.resolve({ default: DashboardCryptoHeatmap }),
+    '/dashboard/mapas-calor': () => Promise.resolve({ default: DashboardCryptoHeatmap }),
+    '/dashboard/heatmaps': () => Promise.resolve({ default: DashboardCryptoHeatmap }),
 };

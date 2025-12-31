@@ -71,7 +71,7 @@ export const DashboardUsers: FC = () => {
             {filteredUsers?.length === 0 ? (
                 <NullResults text={gender || nationality || age} module={t.moduleName} />
             ) : (
-                <div className="grid grid-cols-[1fr] gap-5 [@min-width:480px]:grid-cols-2 md:grid-cols-4">
+                <div className="grid grid-cols-[1fr] gap-5  min-[480px]:grid-cols-2 md:grid-cols-4">
                     {filteredUsers.slice(start, end).map((user) => (
                         <Card
                             type="normal"
@@ -89,7 +89,7 @@ export const DashboardUsers: FC = () => {
             )}
 
             <Pagination pages={renderPageNumbers(pages, currentPage)} currentPage={currentPage} handlePageChange={handlePageChange} itemsPerPage={itemsPerPage} handleItemsPerPageChange={handleItemsPerPageChange} itemsPerPageOptions={itemsPerPageOptions} t={t} />
-            <div className="basis-full order-99 flex justify-center items-center mt-5 box-border [@max-width:980px]:order-99 [@max-width:980px]:basis-full">
+            <div className="basis-full order-99 flex justify-center items-center mt-5 box-border max-[980px]:order-99 max-[980px]:basis-full">
                 <Button
                     type="button"
                     className="bg-[#3e8e41] py-2.5 px-5 border-none cursor-pointer w-fit!"

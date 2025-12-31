@@ -6,4 +6,5 @@ import { DashboardCryptoCurrencyDetails } from './Dashboard/CryptoCurrencies/Cry
 import { DashboardUsers } from './Dashboard/Users'
 import { DashboardCryptoCharts } from './Dashboard/CryptoCurrencies/CryptoCharts'
 import { DashboardUserDetails } from './Dashboard/Users/UserDetails'
-export { Login, DashboardLayout, DashboardHome, DashboardUsers, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardCryptoCharts, DashboardUserDetails }
+import { DashboardCryptoHeatmap } from './Dashboard/DashboardCryptoHeatmap'
+export { Login, DashboardLayout, DashboardHome, DashboardUsers, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardCryptoCharts, DashboardUserDetails, DashboardCryptoHeatmap }

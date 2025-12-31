@@ -15,6 +15,8 @@ export interface CardProps {
     title?: string;
     dataType?: string;
     showModal?: boolean;
+    onViewHeatmap?: (data: any) => void
+
 }
 
 /* export interface CardDetailsProps { title?: string; user?: any; children: ReactNode; className?: string; }

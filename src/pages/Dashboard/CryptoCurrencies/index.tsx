@@ -7,17 +7,14 @@ import { useLayoutEffect, useMemo, useRef, useState, type FC } from "react";
 import { FaCoins } from "react-icons/fa";
 import { useNavigate } from "react-router";
 
-
-
 export const DashboardCryptoCurrencies: FC = () => {
     const { criptos, fetchCriptos, symbol, loading, error, handleViewCoin, handleViewChart, handlePageChange, renderPageNumbers, itemsPerPage, currentPage, handleItemsPerPageChange } = useCryptoStore();
-
-
     const navigate = useNavigate();
     const { lang } = useLanguage();
     const t = textCurrencies[lang] || textCurrencies.en;
-
+    console.log({ criptos })
     const fetchCriptosRef = useRef(false);
+
     useLayoutEffect(() => {
         if (!fetchCriptosRef.current) {
             fetchCriptos(lang);
@@ -78,7 +75,7 @@ export const DashboardCryptoCurrencies: FC = () => {
             {displayList.length === 0 ? (
                 <NullResults text={searchTerm} module={t.moduleName} />
             ) : (
-                <div className="grid grid-cols-[1fr] gap-5 [@min-width:480px]:grid-cols-2 md:grid-cols-4">
+                <div className="grid grid-cols-[1fr] gap-5 min-[480px]:grid-cols-2 md:grid-cols-4">
                     {displayList.slice(start, end).map((cripto: any, index: any) => (
                         <Card
                             title={t.priceTitle}
@@ -95,6 +92,7 @@ export const DashboardCryptoCurrencies: FC = () => {
             )}
 
             <Pagination pages={renderPageNumbers(pages, currentPage)} currentPage={currentPage} handlePageChange={handlePageChange} itemsPerPage={itemsPerPage} handleItemsPerPageChange={handleItemsPerPageChange} itemsPerPageOptions={itemsPerPageOptions} t={t} />
+
         </div>
     );
 };

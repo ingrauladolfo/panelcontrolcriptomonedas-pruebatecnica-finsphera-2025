@@ -23,8 +23,9 @@ export const DashboardCryptoCurrencyDetails = () => {
             fetchedRef.current = true;
         }
     }, [symbol, fetchCripto]);
+    console.log({ cripto })
     return (
-        <div className="flex flex-wrap gap-6 items-start justify-center w-full box-border [@max-width:980px]:flex-col [@max-width:980px]:gap-4">
+        <div className="flex flex-wrap gap-6 items-start justify-center w-full box-border max-[980px]:flex-col max-[980px]:gap-4">
             <div className="grow shrink basis-0 max-w-140 min-w-70">
                 {cripto && (
                     <>
@@ -48,7 +49,7 @@ export const DashboardCryptoCurrencyDetails = () => {
                     </>
                 )}
             </div>
-            <div className="basis-full order-99 flex justify-center mt-5 box-border [@max-width:980px]:order-99 [@max-width:980px]:basis-full ">
+            <div className="basis-full order-99 flex justify-center mt-5 box-border max-[980px]:order-99 max-[980px]:basis-full ">
                 <Button type="button" className="py-2.5 px-5 border-none rounded-[5px] cursor-pointer w-fit! bg-[#3e8e41]" onClick={() => navigate(-1)}                >
                     Regresar
                 </Button>

@@ -22,7 +22,7 @@ export const useUIStore = create<UIState>((set, get) => ({
         }
 
         // Solo aceptar rutas exactas cuya UI quieres mostrar
-        const allowed = ['/dashboard/home', '/dashboard/users', '/dashboard/inicio', '/dashboard/usuarios', '/dashboard/criptomonedas', '/dashboard/cryptocurrencies'];
+        const allowed = ['/dashboard/home', '/dashboard/users', '/dashboard/inicio', '/dashboard/usuarios', '/dashboard/criptomonedas', '/dashboard/cryptocurrencies', '/dashboard/mapas-calor', '/dashboard/heatmaps'];
 
         const dashboardButtons = pathToTitle.filter((item) =>
             allowed.includes(item.path[lang as keyof typeof item.path])

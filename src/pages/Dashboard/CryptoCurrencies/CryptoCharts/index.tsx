@@ -57,7 +57,6 @@ export const DashboardCryptoCharts: FC = () => {
 
     // refs to avoid duplicate work per-mount
     const fetchedSymbolRef = useRef<string | null>(null);
-    console.log({ cripto })
     useLayoutEffect(() => {
         if (!symbol) return;
 
@@ -93,16 +92,16 @@ export const DashboardCryptoCharts: FC = () => {
     }, [symbol, selectedInterval, fetchCripto, fetchCryptoValue]);
 
     // derived values
-    /*  const latestClose = useMemo(() => {
-         const series = (chartSeries && (chartSeries as any)[0] && (chartSeries as any)[0].data) || [];
-         if (!series.length) return undefined;
-         const last = series[series.length - 1];
-         return last?.y?.[3] ?? undefined;
-     }, [chartSeries]);
-     const price = (cripto && (cripto as any).price) ?? latestClose; */
+    /* const latestClose = useMemo(() => {
+        const series = (chartSeries && (chartSeries as any)[0] && (chartSeries as any)[0].data) || [];
+        if (!series.length) return undefined;
+        const last = series[series.length - 1];
+        return last?.y?.[3] ?? undefined;
+    }, [chartSeries]);
+    const price = (cripto && (cripto as any).price) ?? latestClose; */
 
-    /*     const percent = (cripto && (cripto as any).priceChangePercent) ?? undefined;
-     */
+    const percent = (cripto && (cripto as any).priceChangePercent) ?? undefined;
+
     // ApexChart options (cast chart.type to any to satisfy TS)
     const options: ApexOptions = {
         chart: {
@@ -161,9 +160,9 @@ export const DashboardCryptoCharts: FC = () => {
                         <div className="text-2xl text-white font-bold">
                             {latestPrice !== undefined ? Number(latestPrice).toLocaleString() : "—"}
                         </div>
-                        {/* <div className={`text-sm ${percent !== undefined && Number(percent) >= 0 ? "text-green-400" : "text-red-400"}`}>
+                        <div className={`text-sm ${percent !== undefined && Number(percent) >= 0 ? "text-green-400" : "text-red-400"}`}>
                             {percent !== undefined ? `${Number(percent).toFixed(2)}%` : "—"}
-                        </div> */}
+                        </div>
                         <div className="text-sm text-gray-300 ml-4">Intervalo: {selectedInterval}</div>
                     </div>
                 </div>

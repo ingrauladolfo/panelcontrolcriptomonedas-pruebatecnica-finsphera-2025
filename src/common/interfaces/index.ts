@@ -16,4 +16,6 @@ import type { UsersStore } from '@/common/interfaces/stores/pages/Dashboard/User
 import type { User } from '@/common/interfaces/stores/pages/Dashboard/Users/User'
 import type { MessagesMap, SendMessageState } from "@/common/interfaces/stores/components/Dashboard/Modal";
 import type { UserMessage, UserDetailsStore } from "./pages/Dashboard/Users/UserDetails";
-export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps, PaginationProps, UsersStore, User, MessagesMap, SendMessageState, UserMessage, UserDetailsStore }
+import type { CryptoHeatmapItem, CryptoHeatmapState } from "./stores/pages/Dashboard/CryptoHeatmap";
+import type { CryptoHeatmapProps } from "./pages/Dashboard/CryptoHeatmap";
+export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps, PaginationProps, UsersStore, User, MessagesMap, SendMessageState, UserMessage, UserDetailsStore, CryptoHeatmapItem, CryptoHeatmapState, CryptoHeatmapProps }
