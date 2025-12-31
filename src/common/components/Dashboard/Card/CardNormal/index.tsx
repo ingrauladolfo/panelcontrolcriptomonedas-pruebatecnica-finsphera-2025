@@ -1,3 +1,6 @@
+/* The above code is a TypeScript React component called `CardNormal`. It takes in various props such
+as `title`, `data`, `children`, and functions like `onDelete`, `onView`, `onViewGraph`, `onExport`,
+`onMessage`, `onClose`, `onConfirm`, `showModal`, `className`, `dataType`, and `onViewHeatmap`. */
 import type { CardProps } from '@/common/interfaces'
 import { Modal, SendMessageModal } from '@/common/components/'
 import { FaEye, FaTrash, FaChartLine, FaEnvelope, FaFileCsv, FaX } from 'react-icons/fa6'

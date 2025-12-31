@@ -1,3 +1,6 @@
+/* This code snippet is a TypeScript React component called `UserProfile`. It receives props such as
+`user`, `initials`, `loadFromStorage`, `showLogoutModal`, `openLogoutModal`, `closeLogoutModal`,
+`confirmLogout`, `confirmText`, and `cancelText`. */
 import type { UserProfileProps } from "@/common/interfaces"
 import { useLayoutEffect, useRef, useState, type FC } from "react"
 import { Button } from "../../shared/Button"

@@ -1,3 +1,12 @@
+/**
+ * The `Button` component is a TypeScript React functional component that renders either an anchor
+ * element or a button element based on the presence of a `href` prop.
+ * @param  - The `Button` component accepts the following props:
+ * @returns The `Button` component is being returned. It is a functional component that renders either
+ * an `<a>` element or a `<button>` element based on the presence of the `href` prop. The component
+ * accepts props such as `disabled`, `children`, `onClick`, `type`, `href`, `className`, `ariaLabel`,
+ * and `rounded`. The component's structure and styling are defined based
+ */
 import type { ButtonProps } from '@/common/interfaces'
 import { type FC } from 'react'
 

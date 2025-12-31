@@ -1,3 +1,5 @@
+/* This TypeScript code defines a custom hook named `useDashboardHomeStore` using the `zustand`
+library. Here's a breakdown of what the code is doing: */
 // useDashboardHomeStore.ts
 import { pathToTitle } from '@/assets/data';
 import type { DashboardHomeState } from '@/common/interfaces';

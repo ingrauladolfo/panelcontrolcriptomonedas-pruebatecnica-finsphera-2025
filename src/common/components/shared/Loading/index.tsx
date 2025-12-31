@@ -1,3 +1,14 @@
+/**
+ * The `Loading` component displays a loading spinner and a message based on the current language and
+ * the path being loaded.
+ * @param  - The code you provided is a React functional component called `Loading`. It displays a
+ * loading spinner along with a message based on the current language and the path being accessed.
+ * Here's a breakdown of the key parts:
+ * @returns The `Loading` component is being returned. It is a functional component that displays a
+ * loading spinner and a text indicating the loading status based on the current language and the path
+ * being loaded. The component dynamically determines the title to display based on the current path
+ * and language, falling back to 'Error' if no matching path is found.
+ */
 import type { FC } from 'react';
 import { useLocation } from 'react-router';
 import { pathToTitle } from '@/assets/data';

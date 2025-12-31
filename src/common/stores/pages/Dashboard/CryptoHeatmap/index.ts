@@ -1,3 +1,5 @@
+/* This code snippet is defining a custom hook called `useCryptoHeatmapStore` using Zustand, a small
+and fast state management library for React. Here's a breakdown of what the code is doing: */
 import { create } from 'zustand'
 import axios from 'axios'
 import type { CryptoHeatmapState } from '@/common/interfaces'
@@ -35,50 +37,3 @@ export const useCryptoHeatmapStore = create<CryptoHeatmapState>((set) => ({
 
     reset: () => set({ heatmap: [], loading: false, error: null }),
 }))
-/* export const useCryptoHeatmapStore = create<CryptoHeatmapState>((set, get) => ({
-    heatmap: [],
-    loading: false,
-    error: null,
-
-    fetchCryptosHeatmap: async () => {
-        set({ loading: true, error: null })
-        try {
-            const url = 'https://api.binance.com/api/v3/ticker/bookTicker'
-            const response = await axios.get(url)
-            const data = Array.isArray(response.data)
-                ? response.data
-                : [response.data]
-
-            const currentHeatmap = get().heatmap;
-            if (currentHeatmap.length > 0) {
-                set({ heatmap: [...currentHeatmap, ...data], loading: false })
-            } else {
-                set({ heatmap: data, loading: false })
-            }
-        } catch (error: any) {
-            set({ error: error.message, loading: false })
-        }
-    },
-
-    fetchCryptoHeatmap: async (symbol) => {
-        set({ loading: true, error: null })
-        try {
-            const url = `https://api.binance.com/api/v3/ticker/bookTicker?symbol=${symbol}`
-            const response = await axios.get(url)
-            const data = Array.isArray(response.data)
-                ? response.data
-                : [response.data]
-
-            const currentHeatmap = get().heatmap;
-            if (currentHeatmap.length > 0) {
-                set({ heatmap: data, loading: false })
-            } else {
-                set({ heatmap: data, loading: false })
-            }
-        } catch (error: any) {
-            set({ error: error.message, loading: false })
-        }
-    },
-
-    resetHeatmap: () => set({ heatmap: [] }),
-})) */

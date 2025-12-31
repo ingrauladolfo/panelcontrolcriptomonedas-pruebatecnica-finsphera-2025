@@ -1,3 +1,5 @@
+/* This TypeScript code snippet defines a custom hook `useSearchStore` using Zustand, a small and fast
+global state management library. */
 import type { SearchActions, SearchState } from "@/common/interfaces";
 import { create } from "zustand";
 import type React from "react";
@@ -6,7 +8,6 @@ import type { ChangeEvent } from "react";
 export const useSearchStore = create<SearchState & SearchActions>((set, get) => ({
     searchTerm: "",
     active: false,
-
     setSearchTerm: (v: string) => set({ searchTerm: v }),
     setActive: (v: boolean) => set({ active: v }),
     reset: () => set({ searchTerm: "", active: false }),

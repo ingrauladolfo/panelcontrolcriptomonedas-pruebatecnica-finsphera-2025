@@ -1,3 +1,7 @@
+/* This TypeScript code snippet is defining an array named `pathToTitle` of type `PathToTitle[]`. Each
+element in the array is an object with `path` and `title` properties, where `path` is an object
+containing paths in different languages (Spanish and English) and `title` is an object containing
+titles in different languages. */
 import type { PathToTitle } from "@/common/interfaces";
 
 export const pathToTitle: PathToTitle[] = [

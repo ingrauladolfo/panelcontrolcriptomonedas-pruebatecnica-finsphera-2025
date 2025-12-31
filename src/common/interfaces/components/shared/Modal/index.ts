@@ -1,3 +1,5 @@
+/* The code snippet you provided is defining TypeScript interfaces in a file named `interfaces.ts`.
+Interfaces in TypeScript are used to define the structure of objects. */
 // interfaces.ts
 export interface ModalProps {
     message: string;

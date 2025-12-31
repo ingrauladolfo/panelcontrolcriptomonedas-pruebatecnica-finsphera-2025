@@ -1,3 +1,8 @@
+/**
+ * The `Card` function in TypeScript React renders either a `CardNormal` or `CardDetails` component
+ * based on the `type` prop.
+ * @param {CardProps}  - The `Card` component takes the following parameters:
+ */
 import type { CardProps } from '@/common/interfaces';
 import { CardNormal } from './CardNormal';
 import { CardDetails } from './CardDetails';

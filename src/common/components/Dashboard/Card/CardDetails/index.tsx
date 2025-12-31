@@ -1,3 +1,11 @@
+/**
+ * The `CardDetails` function in TypeScript React renders a card component with customizable title,
+ * data, and children elements.
+ * @param {CardProps}  - The `CardDetails` component takes the following parameters:
+ * @returns The `CardDetails` component is being returned. It accepts props such as `children`, `data`,
+ * `className`, and `title` of type `CardProps`. Inside the component, it renders a styled card with
+ * title, name, image, and children components.
+ */
 import type { CardProps } from '@/common/interfaces/components/Dashboard/Card';
 
 

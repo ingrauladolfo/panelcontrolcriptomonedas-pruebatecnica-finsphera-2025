@@ -1,3 +1,4 @@
+/* This code snippet is exporting and importing various components in a TypeScript React application. */
 import { Login } from './Login'
 import { DashboardLayout } from './Dashboard'
 import { DashboardHome } from './Dashboard/Home'

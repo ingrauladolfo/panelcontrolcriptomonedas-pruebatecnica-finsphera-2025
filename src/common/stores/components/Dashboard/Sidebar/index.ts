@@ -1,16 +1,9 @@
 import { create } from 'zustand';
 import { FaHome, FaUsers } from 'react-icons/fa';
-import type { IconType } from 'react-icons';
 import { pathToTitle } from '@/assets/data';
-
-type UIState = {
-    sidebarOpen: boolean;
-    setSidebarOpen: (value: boolean) => void;
-    titles: { path: string; title: string; icon?: IconType }[];
-    loadTitles: (lang: string) => void;
-};
-
-export const useUIStore = create<UIState>((set, get) => ({
+import type { SidebarState } from '@/common/interfaces'
+import type { IconType } from 'react-icons';
+export const useUIStore = create<SidebarState>((set, get) => ({
     sidebarOpen: false,
     setSidebarOpen: (value) => set({ sidebarOpen: value }),
     titles: [],
@@ -20,7 +13,6 @@ export const useUIStore = create<UIState>((set, get) => ({
             // Si ya hay títulos cargados, no hacer nada
             return;
         }
-
         // Solo aceptar rutas exactas cuya UI quieres mostrar
         const allowed = ['/dashboard/home', '/dashboard/users', '/dashboard/inicio', '/dashboard/usuarios', '/dashboard/criptomonedas', '/dashboard/cryptocurrencies', '/dashboard/mapas-calor', '/dashboard/heatmaps'];
 

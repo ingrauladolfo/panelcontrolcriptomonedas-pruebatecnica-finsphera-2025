@@ -1,3 +1,6 @@
+/* This TypeScript code defines an interface named `User`. An interface in TypeScript is a way to
+define the structure of an object. In this case, the `User` interface specifies the properties and
+their types that an object representing a user should have. */
 export interface User {
     gender: string;
     name: {

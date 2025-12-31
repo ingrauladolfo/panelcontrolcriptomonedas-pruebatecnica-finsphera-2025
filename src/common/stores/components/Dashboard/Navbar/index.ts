@@ -1,3 +1,5 @@
+/* This code snippet is creating a custom hook called `useUserStore` using Zustand, a small and fast
+state management library for React. */
 import type { UserState } from '@/common/interfaces'
 import { create } from 'zustand'
 export const useUserStore = create<UserState>((set, get) => ({

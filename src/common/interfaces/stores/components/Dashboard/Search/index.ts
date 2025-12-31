@@ -1,3 +1,5 @@
+/* The code snippet you provided is defining TypeScript interfaces for a search functionality. Here's a
+breakdown of what each part is doing: */
 import type { ChangeEvent } from "react";
 
 export interface SearchState {
@@ -33,14 +35,3 @@ export interface SearchActions {
     handleSearch: (filtered: any[], onSearch: (filtered: any[], term?: string) => void) => void;
 
 }
-/* export interface SearchActions {
-    setSearchTerm: (term: string) => void;
-    setActive: (active: boolean) => void;
-    setFilteredData: (data: any[]) => void;
-    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    doFilter: (term: string, data: any[]) => void;
-    handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>, data: any[]) => void;
-    handleClear: (data: any[]) => void;
-    getValueByKey: (obj: any, key: string) => any;
-    handleSearch: (onSearch: (data: any[]) => void) => void;
-} */

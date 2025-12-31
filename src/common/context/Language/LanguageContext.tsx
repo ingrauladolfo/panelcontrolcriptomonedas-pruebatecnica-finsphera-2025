@@ -1,3 +1,5 @@
+/* This code snippet is setting up a language context provider in a TypeScript React application.
+Here's a breakdown of what it does: */
 import { createContext, useContext, useState, useLayoutEffect, type ReactNode } from 'react';
 import { i18nInstance } from '../../../i18n';
 import type { LanguageContextValue } from '../../interfaces';

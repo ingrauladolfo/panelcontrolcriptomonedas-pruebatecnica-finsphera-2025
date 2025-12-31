@@ -1,7 +1,9 @@
+/* This TypeScript code defines an interface named `CryptoState`. Interfaces in TypeScript are used to
+define the structure of objects. In this case, the `CryptoState` interface specifies the shape of an
+object that represents the state related to cryptocurrency data in an application. */
 export interface CryptoState {
     criptos: any[];
     cripto: any | undefined;
-
     symbol: string;
     loading: boolean;
     error: string | null;
@@ -18,7 +20,6 @@ export interface CryptoState {
     itemsPerPage: number;
     filteredCriptos: any[];
     handleSearch: (data: any[]) => void;
-
     // Nueva parte para charts / velas
     chartSeries: any[];         // estructura ready-to-use para ApexCharts: [{ data: [{ x: Date, y: [o,h,l,c] }, ...] }]
     chartRaw: any[];            // datos crudos devueltos por la API uiKlines

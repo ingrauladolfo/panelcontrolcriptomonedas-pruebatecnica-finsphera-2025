@@ -1,3 +1,6 @@
+/* This code snippet is defining an interface named `UsersStore` in a TypeScript file called
+`UsersStore.ts`. The interface `UsersStore` specifies the structure of an object that should have
+the following properties and methods: */
 // UsersStore.ts
 import type { User } from "./User";
 

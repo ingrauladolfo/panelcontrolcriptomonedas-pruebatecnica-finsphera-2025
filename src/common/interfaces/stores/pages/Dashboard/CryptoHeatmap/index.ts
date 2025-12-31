@@ -1,3 +1,4 @@
+/* This TypeScript code is defining two interfaces: `CryptoHeatmapItem` and `CryptoHeatmapState`. */
 
 export interface CryptoHeatmapItem {
     symbol: string
@@ -7,9 +8,6 @@ export interface CryptoHeatmapItem {
     askQty: string
     id?: string
 }
-
-
-
 export interface CryptoHeatmapState {
     heatmap: CryptoHeatmapItem[]
     loading: boolean

@@ -1,3 +1,5 @@
+/* This code snippet is defining a mapping of routes to components in a TypeScript application. Here's
+a breakdown of what it does: */
 import { DashboardUserDetails, DashboardCryptoCurrencies, DashboardCryptoCurrencyDetails, DashboardHome, DashboardUsers, DashboardCryptoCharts, Login, DashboardCryptoHeatmap } from "@/pages";
 export const pagesMap: Record<string, () => Promise<{ default: any }>> = {
     '/': () => Promise.resolve({ default: Login }),

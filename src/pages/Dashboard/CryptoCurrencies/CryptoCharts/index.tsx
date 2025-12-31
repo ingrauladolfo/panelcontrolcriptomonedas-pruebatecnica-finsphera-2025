@@ -7,25 +7,7 @@ import { Button, Loading, NullResults } from "@/common/components";
 import { useCryptoStore } from "@/common/stores";
 import { useLocation, useNavigate } from "react-router";
 import { FaChevronLeft } from "react-icons/fa";
-
-const INTERVALS: { label: string; value: string }[] = [
-    { label: "1s", value: "1s" },
-    { label: "1m", value: "1m" },
-    { label: "3m", value: "3m" },
-    { label: "5m", value: "5m" },
-    { label: "15m", value: "15m" },
-    { label: "30m", value: "30m" },
-    { label: "1h", value: "1h" },
-    { label: "2h", value: "2h" },
-    { label: "4h", value: "4h" },
-    { label: "6h", value: "6h" },
-    { label: "8h", value: "8h" },
-    { label: "12h", value: "12h" },
-    { label: "1d", value: "1d" },
-    { label: "3d", value: "3d" },
-    { label: "1w", value: "1w" },
-    { label: "1M", value: "1M" },
-];
+import { INTERVALS } from "@/assets/data";
 
 const INFLIGHT_SET_KEY = "__kline_inflight_set";
 const DONE_SET_KEY = "__kline_done_set";

@@ -1,3 +1,4 @@
+/* This code defines a TypeScript React functional component called `Navbar`. */
 // Navbar.tsx
 import { useLayoutEffect, type FC } from 'react'
 import { Sidebar } from '../Sidebar'

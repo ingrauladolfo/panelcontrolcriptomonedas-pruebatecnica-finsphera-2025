@@ -1,3 +1,5 @@
+/* This code snippet is a TypeScript React component called `Search`. It is a functional component that
+takes in props of type `SearchProps`. Here is a breakdown of what the component does: */
 // Search.tsx
 import type { SearchProps } from "@/common/interfaces";
 import { useSearchStore } from "@/common/stores";

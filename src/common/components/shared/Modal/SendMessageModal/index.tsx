@@ -1,3 +1,12 @@
+/**
+ * The `SendMessageModal` component in TypeScript React allows users to send messages to a specified
+ * user with a title and content input fields.
+ * @param {SendMessageModalProps}  - The `SendMessageModal` component takes three props:
+ * @returns The code snippet is returning a React functional component called `SendMessageModal`. This
+ * component renders a modal for sending a message to a user. It includes form fields for entering a
+ * message title and content, along with buttons for submitting the message or closing the modal. The
+ * component also utilizes state hooks to manage the title and content input values.
+ */
 import type { SendMessageModalProps } from "@/common/interfaces";
 import { useState } from "react";
 import { FaX } from "react-icons/fa6";

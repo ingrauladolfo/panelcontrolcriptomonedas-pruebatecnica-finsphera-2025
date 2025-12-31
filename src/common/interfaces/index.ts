@@ -1,3 +1,8 @@
+/* This TypeScript code is using import statements to bring in type definitions from various files in
+the project. It is importing interfaces like `UserLogin`, `StoreLogin`, `PathToTitle`,
+`LanguageContextValue`, `ButtonProps`, `DashboardHomeState`, and many others from different files
+within the project structure. */
+/* This TypeScript code defines two interfaces: `UserLogin` and `StoreLogin`. */
 import type { UserLogin, StoreLogin } from "@/common/interfaces/stores/pages/Login";
 import type { PathToTitle } from "./routes/PathToTitle";
 import type { LanguageContextValue } from "./context/Language";
@@ -18,4 +23,5 @@ import type { MessagesMap, SendMessageState } from "@/common/interfaces/stores/c
 import type { UserMessage, UserDetailsStore } from "./pages/Dashboard/Users/UserDetails";
 import type { CryptoHeatmapItem, CryptoHeatmapState } from "./stores/pages/Dashboard/CryptoHeatmap";
 import type { CryptoHeatmapProps } from "./pages/Dashboard/CryptoHeatmap";
-export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps, PaginationProps, UsersStore, User, MessagesMap, SendMessageState, UserMessage, UserDetailsStore, CryptoHeatmapItem, CryptoHeatmapState, CryptoHeatmapProps }
+import type { SidebarState } from "./stores/components/Dashboard/Sidebar";
+export type { UserLogin, StoreLogin, PathToTitle, LanguageContextValue, ButtonProps, DashboardHomeState, CardProps, RandomUser, UserState, UserProfileProps, ModalProps, SendMessageModalProps, Message, CryptoState, SearchProps, SearchState, SearchActions, NullResultsFoundProps, PaginationProps, UsersStore, User, MessagesMap, SendMessageState, UserMessage, UserDetailsStore, CryptoHeatmapItem, CryptoHeatmapState, CryptoHeatmapProps, SidebarState }

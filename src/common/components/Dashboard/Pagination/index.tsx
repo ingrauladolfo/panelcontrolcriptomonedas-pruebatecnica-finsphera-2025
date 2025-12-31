@@ -1,3 +1,6 @@
+/* This code snippet is defining a React functional component called `Pagination` that takes in props
+of type `PaginationProps`. The component renders a pagination UI with buttons to navigate between
+pages and a select dropdown to change the number of items per page. */
 import { Button } from "@/common/components/";
 import type { PaginationProps } from "@/common/interfaces";
 import type { FC } from "react";

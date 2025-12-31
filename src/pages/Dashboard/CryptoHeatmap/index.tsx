@@ -1,3 +1,6 @@
+/* The above code is a TypeScript React component called `DashboardCryptoHeatmap`. It receives a `data`
+prop of type `CryptoHeatmapProps` and uses the `useCryptoHeatmapStore` hook to manage state related
+to cryptocurrency heatmap data. */
 import type { CryptoHeatmapProps } from '@/common/interfaces'
 import { useCryptoHeatmapStore } from '@/common/stores/pages/Dashboard/CryptoHeatmap'
 import { useLayoutEffect, useMemo, type FC } from 'react'

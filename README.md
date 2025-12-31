@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Crypto Market Analyzer Finsphera Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prueba Técnica para Finsphera para la posición Software Engineer - III - Frontend (UX/UI Focus) - 2025
+## 🛠 Tecnologías usadas
+<div align=center>
+    <div align=center style="display: flex; justify-content: space-around;">
+        <div>
+            <a href='https://react.dev/' target='_blank'>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React"
+                    height="50px" /><br>React</a>
+        </div>
+        <div>
+            <a href='https://developer.mozilla.org/es/docs/Web/CSS' target='_blank'>
+                <img src="https://vitejs.dev/logo.svg" alt="Vite" height="50px" />
+                <br>Vite</a>
+        </div>
+        <div>
+            <a href='https://zustand.docs.pmnd.rs/getting-started/introduction' target='_blank'>
+                <img src="https://repository-images.githubusercontent.com/180328715/fca49300-e7f1-11ea-9f51-cfd949b31560"
+                    alt="Zustand" height="50px" />
+                <br>Zustand
+            </a>
+        </div>
+        <div>
+            <a href='https://www.typescriptlang.org/docs/' target='_blank'>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/500px-Typescript_logo_2020.svg.png"
+                    alt="TypeScript" height="50px" />
+                <br>TypeScript
+            </a>
+        </div>
+        <div>
+            <a href='https://tailwindcss.com/docs/' target='_blank'>
+                <img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype-white.830c8e49.svg"
+                    alt="TailwindCSS" height="50px" />
+                <br>TailwindCSS
+            </a>
+        </div>
+    </div>
+</div>
 
-Currently, two official plugins are available:
+## Instalación y Correr el Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clonar el proyecto usando Git:
 
-## React Compiler
+| Comando (Command)                                        | Uso (Usage)                   |
+| -------------------------------------------------------- | ----------------------------- |
+| `https://github.com/ingrauladolfo/panelcontrolusuarios-pruebatecnica-envioclick-2025.git`| Para usarlo con **HTTPS**     |
+| `git@github.com:ingrauladolfo/panelcontrolcriptomonedas-pruebatecnica-finsphera-2025.git`| Para usarlo con **SSH**       |
+| `gh repo clone ingrauladolfo/panelcontrolusuarios-pruebatecnica-envioclick-2025`| Para usarlo en **GitHub CLI** |
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### 2. Una vez clonado el repositorio, instalar las dependencias:
 
-## Expanding the ESLint configuration
+| Comando (Command) | Descripción (Description) |
+| ----------------- | ------------------------- |
+| `npm install`     | Versión completa          |
+| `npm i`           | Versión corta             |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 3. Correr el proyecto usando el comando `npm run dev`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Author
+[Ing. Raúl Adolfo Torres Vargas](https://ingrauladolfo-portfolio.vercel.app/)

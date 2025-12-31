@@ -1,3 +1,6 @@
+/* This code snippet is defining an interface named `CardProps` in a TypeScript file located at
+`/common/interfaces/index.ts` or wherever it may be. The `CardProps` interface specifies the shape
+of props that a component named `Card` expects to receive. */
 // /common/interfaces/index.ts (o donde esté)
 import type { ReactNode } from "react";
 export interface CardProps {
@@ -18,13 +21,3 @@ export interface CardProps {
     onViewHeatmap?: (data: any) => void
 
 }
-
-/* export interface CardDetailsProps { title?: string; user?: any; children: ReactNode; className?: string; }
-
-export interface CardNormalProps {
-    data: any;
-    children?: ReactNode;
-    onDelete?: () => void;
-    onView?: () => void;
-    className?: string;
-} */

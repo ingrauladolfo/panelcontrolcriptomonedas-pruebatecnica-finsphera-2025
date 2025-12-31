@@ -1,3 +1,5 @@
+/* This code snippet is defining an interface named `PaginationProps` in TypeScript. Interfaces in
+TypeScript are used to define the structure of objects. */
 export interface PaginationProps {
     pages: (any)[];
     currentPage: any;

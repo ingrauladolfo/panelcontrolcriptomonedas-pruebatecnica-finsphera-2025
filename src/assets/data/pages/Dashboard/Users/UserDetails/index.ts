@@ -1,3 +1,6 @@
+/* This TypeScript code snippet is defining a constant variable `countryCodes` that is an object with
+keys of type `string` and values of type `string`. Each key represents a country code, and its
+corresponding value is the name of the country in Spanish. */
 export const countryCodes: { [key: string]: string } = {
     "RS": "Serbia",
     "AU": "Australia",

@@ -8,7 +8,6 @@ export const DashboardLayout = () => {
             <div className="flex-1 pt-20"> {/* 👈 Ajuste clave aquí */}
                 <Outlet />
             </div>
-            {/* <Footer /> */}
         </div>
     )
 }

@@ -1,3 +1,11 @@
+/**
+ * The Sidebar component in TypeScript React renders a sidebar with unique titles and icons, allowing
+ * users to navigate through different sections.
+ * @returns The `Sidebar` component is being returned. It is a functional component that renders a
+ * sidebar with a list of unique titles. The sidebar contains a button to close it, a list of
+ * navigation items with icons, and titles fetched from the UI store based on the selected language.
+ * The sidebar can be toggled open and closed based on the `sidebarOpen` state.
+ */
 import { FaX } from 'react-icons/fa6'
 import { useLayoutEffect, useMemo, type FC } from 'react'
 import { useUIStore } from '@/common/stores'

@@ -1,3 +1,6 @@
+/* This code snippet is a TypeScript React component for a modal dialog. Here's a breakdown of what it
+does: */
+
 // Modal.tsx
 import type { ModalProps } from '@/common/interfaces';
 import type { FC } from 'react';

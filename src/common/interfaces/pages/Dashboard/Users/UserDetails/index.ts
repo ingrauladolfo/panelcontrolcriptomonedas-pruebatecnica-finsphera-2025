@@ -1,3 +1,4 @@
+/* This code snippet is defining TypeScript interfaces. */
 // userDetailsStore.interface.ts
 export interface UserMessage {
     title: string;

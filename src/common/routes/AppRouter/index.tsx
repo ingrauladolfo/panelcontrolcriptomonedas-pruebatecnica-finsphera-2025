@@ -1,3 +1,5 @@
+/* This code snippet defines a React functional component called `AppRouter` that serves as the main
+router for the application. Here's a breakdown of what the code is doing: */
 import { pagesMap, pathToTitle } from '@/assets/data';
 import { Loading } from '@/common/components';
 import { useLanguage } from '@/common/context';

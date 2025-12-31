@@ -1,9 +1,11 @@
+/**
+ * The above code defines a Zustand store for managing and persisting messages, including functions to
+ * send messages, retrieve messages for a specific user, and set messages for a user.
+ * @returns The `useSendMessageStore` function is being exported, which creates a Zustand store for
+ * managing messages. It returns an object with the following properties and methods:
+ */
 import type { Message, MessagesMap, SendMessageState } from '@/common/interfaces';
 import { create } from 'zustand';
-
-
-
-
 const loadFromStorage = (): MessagesMap => {
     try {
         const raw = localStorage.getItem('userMessages') || localStorage.getItem('messages') || '[]';

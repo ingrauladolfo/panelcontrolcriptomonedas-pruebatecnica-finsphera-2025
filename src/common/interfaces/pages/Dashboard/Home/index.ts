@@ -1,3 +1,5 @@
+/* This TypeScript code snippet is defining two interfaces: `UserDashboardHomeProfile` and
+`DashboardHomeState`. */
 // interfaces
 export interface UserDashboardHomeProfile {
     name: {
